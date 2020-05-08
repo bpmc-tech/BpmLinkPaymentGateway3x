@@ -1,3 +1,6 @@
+![LOGO](https://merchant.bpmc.jp/img/color-logo.png)
+
+
 # BpmLinkPaymentGateway3x
 
 EC-CUBE3.x用のBPMクレジット決済プラグイン
