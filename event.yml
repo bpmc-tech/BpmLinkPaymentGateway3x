@@ -1,0 +1,40 @@
+eccube.event.render.shopping.before:
+  - [onRenderShoppingBefore, NORMAL]
+eccube.event.render.shopping_complete.before:
+  - [onRenderShoppingCompleteBefore, NORMAL]
+eccube.event.render.admin_setting_shop_payment_edit.before:
+  - [onRenderAdminSettingShopPaymentEditBefore, NORMAL]
+eccube.event.controller.admin_setting_shop_payment_edit.after:
+  - [onControllerAdminSettingShopPaymentEditAfter, NORMAL]
+eccube.event.render.admin_order_edit.before:
+  - [onRenderAdminOrderEditBefore, NORMAL]
+eccube.event.render.admin_order_new.before:
+  - [onRenderAdminOrderNewBefore, NORMAL]
+eccube.event.controller.admin_order_edit.after:
+  - [onControllerAdminOrderEditAfter, NORMAL]
+eccube.event.controller.shopping_confirm.before:
+  - [onControllerShoppingConfirmBefore, NORMAL]
+eccube.event.render.admin_customer_edit.before:
+  - [onRenderAdminCustomerEditBefore, NORMAL]
+eccube.event.controller.admin_setting_shop_payment_delete.before:
+  - [onControllerAdminSettingShopPaymentDeleteBefore, NORMAL]
+eccube.event.render.mypage.before:
+  - [onRenderMypageBefore, NORMAL]
+eccube.event.render.mypage_change.before:
+  - [onRenderMypageChangeBefore, NORMAL]
+eccube.event.render.mypage_change_complete.before:
+  - [onRenderMypageChangeCompleteBefore, NORMAL]
+eccube.event.render.mypage_delivery.before:
+  - [onRenderMypageDeliveryBefore, NORMAL]
+eccube.event.render.mypage_delivery_new.before:
+  - [onRenderMypageDeliveryNewBefore, NORMAL]
+eccube.event.render.mypage_delivery_edit.before:
+  - [onRenderMypageDeliveryEditBefore, NORMAL]
+eccube.event.render.mypage_favorite.before:
+  - [onRenderMypageFavoriteBefore, NORMAL]
+eccube.event.render.mypage_history.before:
+  - [onRenderMypageHistoryBefore, NORMAL]
+eccube.event.render.mypage_order.before:
+  - [onRenderMypageOrderBefore, NORMAL]
+eccube.event.render.mypage_withdraw.before:
+  - [onRenderMypageWithdrawBefore, NORMAL]

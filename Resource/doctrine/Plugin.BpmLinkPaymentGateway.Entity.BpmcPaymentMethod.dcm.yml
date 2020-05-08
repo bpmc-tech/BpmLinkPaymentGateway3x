@@ -1,0 +1,55 @@
+Plugin\BpmLinkPaymentGateway\Entity\BpmcPaymentMethod:
+  type: entity
+  table: dtb_bpmlpg_payment_method
+  repositoryClass: Plugin\BpmLinkPaymentGateway\Repository\BpmcPaymentMethodRepository
+  id:
+    id:
+      type: integer
+      nullable: false
+      unsigned: false
+      id: true
+      column: payment_id
+  fields:
+    method:
+      type: text
+      nullable: true
+      column: payment_method
+    del_flg:
+      type: smallint
+      nullable: false
+      unsigned: false
+      default: '0'
+    create_date:
+      type: datetime
+      nullable: false
+    update_date:
+      type: datetime
+      nullable: false
+    job:
+      type: text
+      nullable: true
+    ret_type:
+      type: smallint
+      nullable: false
+      unsigned: false
+      default: '1'
+    ret_url:
+      type: text
+      nullable: true
+    ret_cancel_url:
+      type: text
+      nullable: true
+    item_type:
+      type: smallint
+      nullable: false
+      unsigned: false
+      default: '0'
+    payment_type:
+      type: integer
+      nullable: false
+      unsigned: false
+    code:
+      type: text
+      nullable: true
+      column: plugin_code
+  lifecycleCallbacks: {  }

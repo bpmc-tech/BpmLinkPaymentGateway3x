@@ -1,0 +1,17 @@
+name: BpmLinkPaymentGateway
+code: BpmLinkPaymentGateway
+event: BpmLinkPaymentGatewayEvent
+version: 1.0.1
+service:
+  - BpmLinkPaymentGatewayServiceProvider
+orm.path:
+  - /Resource/doctrine
+const:
+  PG_LINK_API_URL: https://payment.bpmc.jp/link/%s/payment
+  PG_PARAM_JOB: CAPTURE
+  PG_PARAM_ITEM_TYPE: 0
+  PG_PARAM_RET_TYPE: 1
+  PG_PAYID_CREDIT_LINK: 101
+  PG_PAYNAME_CREDIT_LINK: BPMクレジットカード決済
+  PG_PAYNAME_CREDIT_ROLE_MIN: 10
+  PG_PAYNAME_CREDIT_ROLE_MAX: 500000

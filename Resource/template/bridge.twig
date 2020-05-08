@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPMC Payment bridge</title>
+  <link rel="stylesheet" href="{{ app.url('plugin_BpmLinkPaymentGateway_assets', {assets_type:'css', assets_name:'layout.css'}) }}">
+</head>
+<body>
+  <div id="wrap">
+    <img src="{{ app.url('plugin_BpmLinkPaymentGateway_assets', {assets_type:'img', assets_name:'bpmc_logo.png'}) }}" alt="">
+    <form method="post" id="form" action="{{ api_url }}">
+      <div id="summary">
+        3秒後に自動で決済ページに移動します。<br/>
+        移動しない場合は下にある「決済ページへ」ボタンをクリックしてください。
+      </div>
+      <div class="hidden">
+        <input type="hidden" name="amount" value="{{ orderTotal }}" />
+        <input type="hidden" name="currency_code" value="JPY" />
+        <input type="hidden" name="shop_tracking" value="{{ orderPreId }}" />
+        <input type="hidden" name="callback_url" value="{{ RetUrl }}" />
+        <input type="hidden" name="cancel_url" value="{{ CancelUrl }}" />
+        <input type="hidden" name="email" value="{{ orderEmail }}" />
+        <input type="hidden" name="tel" value="{{ orderTelnumber }}" />
+        <input type="hidden" name="product" value="{{ orderItemName }}" />
+        <input type="hidden" name="shop_data1" value="{{ shopData1 }}" />
+      </div>
+
+      <input type="submit" value="決済ページへ">
+    </form>  
+  </div>
+<script type="text/javascript" charset="utf-8">
+(function(){
+
+setTimeout(function(){
+  document.getElementById('form').submit();
+}, 1000);
+
+})(window);
+</script>
+</body>
+</html>

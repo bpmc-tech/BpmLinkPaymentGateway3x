@@ -1,0 +1,37 @@
+Plugin\BpmLinkPaymentGateway\Entity\BpmcPlugin:
+  type: entity
+  table: dtb_bpmlpg_plugin
+  repositoryClass: Plugin\BpmLinkPaymentGateway\Repository\BpmcPluginRepository
+  id:
+    id:
+      type: integer
+      nullable: false
+      unsigned: false
+      id: true
+      column: plugin_id
+      generator:
+        strategy: AUTO
+  fields:
+    code:
+      type: text
+      nullable: false
+      column: plugin_code
+    name:
+      type: text
+      nullable: false
+      column: plugin_name
+    api_token:
+      type: text
+      nullable: true
+    del_flg:
+      type: smallint
+      nullable: false
+      unsigned: false
+      default: '0'
+    create_date:
+      type: datetime
+      nullable: false
+    update_date:
+      type: datetime
+      nullable: false
+  lifecycleCallbacks: {  }

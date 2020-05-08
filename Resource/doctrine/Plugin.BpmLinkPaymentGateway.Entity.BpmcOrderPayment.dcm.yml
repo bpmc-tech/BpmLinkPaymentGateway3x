@@ -1,0 +1,47 @@
+Plugin\BpmLinkPaymentGateway\Entity\BpmcOrderPayment:
+  type: entity
+  table: dtb_bpmlpg_order_payment
+  repositoryClass: Plugin\BpmLinkPaymentGateway\Repository\BpmcOrderPaymentRepository
+  id:
+    id:
+      type: integer
+      nullable: false
+      unsigned: false
+      id: true
+      column: order_id
+  fields:
+    shop_trakking:
+      type: text
+      nullable: false
+      column: shop_trakking
+    job:
+      type: text
+      nullable: false
+      column: job
+    amount:
+      type: integer
+      nullable: false
+      unsigned: false
+    tran_id:
+      type: text
+      nullable: false
+      column: tran_id
+    result:
+      type: smallint
+      nullable: false
+      column: result
+    error_code:
+      type: text
+      nullable: false
+      column: error_code
+    error_msg:
+      type: text
+      nullable: false
+      column: error_msg
+    create_date:
+      type: datetime
+      nullable: false
+    update_date:
+      type: datetime
+      nullable: false
+  lifecycleCallbacks: {  }

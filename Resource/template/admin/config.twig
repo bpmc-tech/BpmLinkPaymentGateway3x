@@ -1,0 +1,80 @@
+{% extends 'default_frame.twig' %}
+
+{% set menus = ['store', 'plugin', 'plugin_list'] %}
+
+{% block title %}BPMクレジットカード決済代行モジュール{% endblock %}
+
+
+{% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block main %}
+    <form class="form-horizontal" method="post" action="{{ url('plugin_BpmLinkPaymentGateway_config') }}">
+        {{ form_widget(form._token) }}
+
+        <div class="row" id="aside_wrap">
+            <div class="col-md-9">
+
+                <div class="box">
+                    <div class="box-body">
+                        <div>
+                            BPMクレジットカード決済代行モジュールをご利用頂く為には株式会社BPMとご契約を行っていただく必要があります。</br>
+                            <span><a href="http://bpmc.co.jp/" target="_blank">
+                                    <button type="button" class="btn btn-default btn-sm" style="margin-bottom:10px;">BPMクレジットカード決済代行システムについて</button>
+                                </a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">設定</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body form-horizontal">
+                        <div class="form-group">
+
+                            <label class="col-sm-2 control-label required ">API TOKEN<span class="text-danger"> *</span></label>
+
+                            <div class="col-sm-10 {% if form.api_token.vars.errors is not empty %}has-error{% endif %}">
+                                {{ form_widget(form.api_token) }}
+                                {{ form_errors(form.api_token) }}
+                            </div>
+                        </div>
+                        
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">その他情報</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">加盟店本部・店舗様</label>
+
+                            <div class="col-sm-10">
+                                <span><a class="btn btn-default btn-sm" href="https://merchant.bpmc.jp/" target="_blank" style="margin-bottom:10px;">加盟店・店舗管理機能</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+            </div><!-- /.col -->
+            <div class="col-md-3" id="aside_column">
+                <div id="common_box" class="col_inner">
+                    <div id="common_button_box" class="box no-header">
+                        <div id="common_button_box__body" class="box-body">
+                            <div id="common_button_box__edit_button" class="row text-center">
+                                <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+                                    <button class="btn btn-primary btn-block btn-lg" type="submit">設定</button>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div>
+            </div><!-- /.col -->
+        </div>
+    </form>
+{% endblock main %}
